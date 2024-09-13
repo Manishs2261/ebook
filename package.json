@@ -9,10 +9,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "d": "^1.0.2"
+    "d": "^1.0.2",
+    "express": "^4.21.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
+    "@types/express": "^4.17.21",
     "@types/node": "^22.5.4",
     "eslint": "^9.10.0",
     "globals": "^15.9.0",
