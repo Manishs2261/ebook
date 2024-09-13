@@ -10,10 +10,12 @@
   "description": "",
   "dependencies": {
     "d": "^1.0.2",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/node": "^22.5.4",
     "eslint": "^9.10.0",
