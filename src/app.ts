@@ -19,7 +19,7 @@ app.get('/',(req, res, next) =>{
 
 
 app.use('/api/users',userRouter);
-app.use('/api',bookRouter);
+app.use('/api/book',bookRouter);
 
 // Globle error handler
 
