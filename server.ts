@@ -1,18 +1,16 @@
 import { config } from "./src/config/config";
 import app from "./src/app";
-import connectDB  from "./src/config/db";
-
+import connectDB from "./src/config/db";
 
 const startServer = async () => {
- //connected data base
-    await connectDB();
+  //connected data base
+  await connectDB();
 
-const port = config.port|| 3000;
+  const port = config.port || 3000;
 
-app.listen(port, () => {
-
-     console.log(`Listening on port: ${port}`);
-});
+  app.listen(port, () => {
+    console.log(`Listening on port: ${port}`);
+  });
 };
 
 startServer();

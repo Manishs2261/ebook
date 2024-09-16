@@ -1,4 +1,4 @@
-import {Request,Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 import { HttpError } from "http-errors";
 import { config } from "../config/config";
 
@@ -16,6 +16,5 @@ const globleErrorHandler = (
     errorStack: config.env === "development" ? err.stack : "",
   });
 };
-
 
 export default globleErrorHandler;

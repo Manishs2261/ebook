@@ -1,27 +1,23 @@
-import {config as conf} from 'dotenv';
-
+import { config as conf } from "dotenv";
 
 conf();
 
-const _config ={
+const _config = {
+  port: process.env.PORT,
 
-    port: process.env.PORT,
+  databaseUrl: process.env.MONGO_CONNECTION_STRING,
 
-    databaseUrl: process.env.MONGO_CONNECTION_STRING,
+  env: process.env.NODE_ENV,
 
-    env: process.env.NODE_ENV,
+  jwtSecret: process.env.JWT_SECRET,
 
-    jwtSecret: process.env.JWT_SECRET,
+  cloudinaryCloud: process.env.CLOUDINARY_CLOUD,
 
-    cloudinaryCloud:process.env.CLOUDINARY_CLOUD,
+  cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
 
-    cloudinaryApiKey:process.env.CLOUDINARY_API_KEY,
+  cloudinarySecret: process.env.CLOUDINARY_API_SECRET,
 
-    cloudinarySecret:process.env.CLOUDINARY_API_SECRET,
-
-    frontendDomain: process.env.FRONTED_DOMAIN,
-
-}
-
+  frontendDomain: process.env.FRONTED_DOMAIN,
+};
 
 export const config = Object.freeze(_config);
