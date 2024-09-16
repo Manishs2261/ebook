@@ -6,7 +6,7 @@ conf();
 const _config ={
 
     port: process.env.PORT,
-    
+
     databaseUrl: process.env.MONGO_CONNECTION_STRING,
 
     env: process.env.NODE_ENV,
@@ -18,6 +18,8 @@ const _config ={
     cloudinaryApiKey:process.env.CLOUDINARY_API_KEY,
 
     cloudinarySecret:process.env.CLOUDINARY_API_SECRET,
+
+    frontendDomain: process.env.FRONTED_DOMAIN,
 
 }
 
