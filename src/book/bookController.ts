@@ -5,6 +5,7 @@ import cloudinary from "../config/cloudinary";
 import path from "path";
 import bookModel from "./bookModel";
 import fs from "node:fs";
+import { AuthRequest } from "../middlewares/authenticate";
  
 
 
@@ -40,17 +41,13 @@ const createBook = async (req: Request, res: Response, next: NextFunction) => {
 
     });
 
-
-
-console.log("book File upload result",bookFileUploadResult);
-    console.log("uploadResult",uploadResult);
-
+    const _req = req as AuthRequest;
 
 
     const newBook = await bookModel.create({
       title:title,
       genre: genre,
-      author:'66e70d1d401301b0c954d656',
+      author: _req.userId,
       coverImage: uploadResult.secure_url,
       file:bookFileUploadResult.secure_url,
 
