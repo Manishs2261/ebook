@@ -3,10 +3,14 @@ import { NextFunction, Request, Response } from "express";
 import createHttpError from "http-errors";
 import cloudinary from "../config/cloudinary";
 import path from "path";
+import bookModel from "./bookModel";
+import fs from "node:fs";
  
 
 
 const createBook = async (req: Request, res: Response, next: NextFunction) => {
+
+  const {title,genre} = req.body;
     
     const files = req.files as { [fieldname: string]: Express.Multer.File[]};
 
@@ -42,11 +46,26 @@ console.log("book File upload result",bookFileUploadResult);
     console.log("uploadResult",uploadResult);
 
 
-    
+
+    const newBook = await bookModel.create({
+      title:title,
+      genre: genre,
+      author:'66e70d1d401301b0c954d656',
+      coverImage: uploadResult.secure_url,
+      file:bookFileUploadResult.secure_url,
+
+    });
+
+    //Delete temp files
+
+
+    await fs.promises.unlink(filePath);
+    await fs.promises.unlink(bookFilePath);
+
 
       res
         .status(201)
-        .json({ message: "USer created" });
+        .json({ _id:newBook._id });
    
     };
 
